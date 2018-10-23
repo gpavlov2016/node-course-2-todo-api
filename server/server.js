@@ -28,27 +28,4 @@ app.listen(3000, () => {
   console.log('Started on port 3000');
 });
 
-// var newTodo = new Todo({
-//   text: 'Edit this video',
-//   comleted: false,
-//   completedAt: new Date()
-// });
-//
-// newTodo.save().then((doc) => {
-//   console.log('Saved todo');
-//   console.log(JSON.stringify(doc, undefined, 2));
-// }, (e) => {
-//   console.log('Unable to save todo', e);
-// });
-//
-//
-// var newUser = new User({
-//   email: 'test@gmail.com'
-// });
-//
-// newUser.save().then((doc) => {
-//   console.log('Saved user');
-//   console.log(JSON.stringify(doc, undefined, 2));
-// }, (e) => {
-//   console.log('Unable to save user', e);
-// });
+module.exports = {app};
