@@ -36,12 +36,12 @@ app.get('/todos/:id', (req, res) => {
   var id = req.params.id;
 
   if (!ObjectID.isValid(id)) {
-    res.status(404).send('Invalid ID')
+    res.status(404).send('Invalid ID');
   }
 
   Todo.findById(id).then((todo) => {
     if (!todo) {
-      return res.status(404).send('ID not found')
+      return res.status(404).send('ID not found');
     }
     res.send({todo});
   }, (e) => {
@@ -54,12 +54,13 @@ app.delete('/todos/:id', (req, res) => {
   var id = req.params.id;
 
   if (!ObjectID.isValid(id)) {
-    res.status(404).send('Invalid ID')
+    return res.status(404).send('Invalid ID');
   }
 
   Todo.findByIdAndRemove(id).then((todo) => {
+    console.log(id);
     if (!todo) {
-      return res.status(404).send('ID not found')
+      return res.status(404).send('ID not found');
     }
     res.send({todo});
   }, (e) => {
